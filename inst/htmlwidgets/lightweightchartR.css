@@ -1,0 +1,130 @@
+.lightweightchartR {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.lightweightchartR-chart {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.lightweightchartR-legend {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 50;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 45%;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.lightweightchartR--dark {
+  background: #101418;
+}
+
+.lightweightchartR--dark .lightweightchartR-legend {
+  color: #e2e8f0;
+}
+
+.lightweightchartR--light {
+  background: #ffffff;
+}
+
+.lightweightchartR--light .lightweightchartR-legend {
+  color: #0f172a;
+}
+
+.lightweightchartR-legend-name {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+
+.lightweightchartR-legend-value {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.lightweightchartR-legend-time {
+  font-size: 12px;
+  line-height: 1.1;
+  opacity: 0.8;
+}
+
+.lightweightchartR-tooltip {
+  position: absolute;
+  z-index: 1200;
+  pointer-events: none;
+  display: none;
+  min-width: 120px;
+  max-width: 220px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 12px;
+  line-height: 1.25;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(8px);
+}
+
+.lightweightchartR--dark .lightweightchartR-tooltip {
+  background: rgba(15, 23, 42, 0.92);
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.lightweightchartR--light .lightweightchartR-tooltip {
+  background: rgba(255, 255, 255, 0.96);
+  color: #0f172a;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.lightweightchartR-tooltip-time {
+  margin-bottom: 6px;
+  font-size: 11px;
+  opacity: 0.78;
+}
+
+.lightweightchartR-tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lightweightchartR-tooltip-row + .lightweightchartR-tooltip-row {
+  margin-top: 4px;
+}
+
+.lightweightchartR-tooltip-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex: 0 0 auto;
+}
+
+.lightweightchartR-tooltip-label {
+  flex: 1 1 auto;
+  opacity: 0.84;
+}
+
+.lightweightchartR-tooltip-value {
+  font-weight: 700;
+  flex: 0 0 auto;
+}

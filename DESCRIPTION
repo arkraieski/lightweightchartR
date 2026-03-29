@@ -1,0 +1,32 @@
+Package: lightweightchartR
+Type: Package
+Title: Pipe-First TradingView Lightweight Charts for Quantmod Workflows
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Alex", "Lightweight",
+      email = "alex@example.com",
+      role = c("aut", "cre")
+    )
+  )
+Description: Wraps TradingView's lightweight-charts library as an
+    htmlwidgets package with a pipe-first API designed around
+    quantmod, xts, and common trading workflows.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    htmlwidgets,
+    quantmod,
+    TTR,
+    xts,
+    zoo
+Suggests:
+    htmltools,
+    jsonlite,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
