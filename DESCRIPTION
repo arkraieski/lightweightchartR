@@ -13,6 +13,8 @@ Description: Wraps TradingView's lightweight-charts library as an
     htmlwidgets package with a pipe-first API designed around
     quantmod, xts, and common trading workflows.
 License: GPL-3
+URL: https://arkraieski.github.io/lightweightchartR/, https://github.com/arkraieski/lightweightchartR
+BugReports: https://github.com/arkraieski/lightweightchartR/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
@@ -26,6 +28,7 @@ Suggests:
     htmltools,
     jsonlite,
     knitr,
+    pkgdown,
     rmarkdown,
     testthat (>= 3.0.0)
 VignetteBuilder: knitr

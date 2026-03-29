@@ -8,6 +8,15 @@
 \description{
 Pipe-first TradingView lightweight charts for quantmod workflows.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://arkraieski.github.io/lightweightchartR/}
+  \item \url{https://github.com/arkraieski/lightweightchartR}
+  \item Report bugs at \url{https://github.com/arkraieski/lightweightchartR/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Alex Lightweight \email{alex@example.com}
 

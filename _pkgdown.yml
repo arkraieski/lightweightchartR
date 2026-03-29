@@ -1,0 +1,46 @@
+url: https://arkraieski.github.io/lightweightchartR/
+
+template:
+  bootstrap: 5
+  bslib:
+    bootswatch: darkly
+
+home:
+  title: lightweightchartR
+  description: Pipe-first TradingView lightweight charts for quantmod workflows.
+
+navbar:
+  structure:
+    left: [reference, articles, news]
+    right: [github]
+  components:
+    github:
+      icon: fab fa-github
+      href: https://github.com/arkraieski/lightweightchartR
+      aria-label: GitHub repository
+
+reference:
+  - title: Chart Construction
+    contents:
+      - lwc_chart
+      - rechart_lwc
+      - chart_series_lwc
+  - title: Layers
+    contents:
+      - add_candles
+      - add_bars
+      - add_line
+      - add_area
+      - add_histogram
+      - add_volume
+      - add_ta
+  - title: Technical Indicators
+    contents:
+      - add_sma
+      - add_ema
+      - add_bbands
+      - add_rsi
+      - add_macd
+  - title: Shiny
+    contents:
+      - lightweightchartR-shiny
