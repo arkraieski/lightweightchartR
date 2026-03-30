@@ -10,9 +10,11 @@ Useful links:
 
 - <https://github.com/arkraieski/lightweightchartR>
 
+- <https://kraieski.dev>
+
 - Report bugs at
   <https://github.com/arkraieski/lightweightchartR/issues>
 
 ## Author
 
-**Maintainer**: Alex Lightweight <alex@example.com>
+**Maintainer**: Alex Kraieski <arkraieski@gmail.com>
