@@ -1,0 +1,10 @@
+dependencies:
+  - name: lightweight-charts
+    version: 5.0.0
+    src: htmlwidgets/lib/lwc
+    script: lwc.js
+  - name: lightweightchartR-binding
+    version: 0.1.5
+    src: htmlwidgets
+    script: lightweightchartR.js
+    stylesheet: lightweightchartR.css
