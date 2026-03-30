@@ -13,12 +13,13 @@ Useful links:
 \itemize{
   \item \url{https://arkraieski.github.io/lightweightchartR/}
   \item \url{https://github.com/arkraieski/lightweightchartR}
+  \item \url{https://kraieski.dev}
   \item Report bugs at \url{https://github.com/arkraieski/lightweightchartR/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Alex Lightweight \email{alex@example.com}
+\strong{Maintainer}: Alex Kraieski \email{arkraieski@gmail.com}
 
 }
 \keyword{internal}

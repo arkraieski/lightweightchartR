@@ -4,8 +4,8 @@ Title: Pipe-First TradingView Lightweight Charts for Quantmod Workflows
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Alex", "Lightweight",
-      email = "alex@example.com",
+      "Alex", "Kraieski",
+      email = "arkraieski@gmail.com",
       role = c("aut", "cre")
     )
   )
@@ -13,7 +13,7 @@ Description: Wraps TradingView's lightweight-charts library as an
     htmlwidgets package with a pipe-first API designed around
     quantmod, xts, and common trading workflows.
 License: GPL-3
-URL: https://arkraieski.github.io/lightweightchartR/, https://github.com/arkraieski/lightweightchartR
+URL: https://arkraieski.github.io/lightweightchartR/, https://github.com/arkraieski/lightweightchartR, https://kraieski.dev
 BugReports: https://github.com/arkraieski/lightweightchartR/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

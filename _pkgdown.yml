@@ -2,6 +2,7 @@ url: https://arkraieski.github.io/lightweightchartR/
 
 template:
   bootstrap: 5
+  theme: arrow-dark
   bslib:
     bootswatch: darkly
 
