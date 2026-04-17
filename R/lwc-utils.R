@@ -114,32 +114,53 @@ format_time_index <- function(index) {
 }
 
 #' @keywords internal
+columns_to_records <- function(columns, n = NULL) {
+  if (is.null(n)) {
+    n <- if (length(columns)) length(columns[[1L]]) else 0L
+  }
+
+  if (n == 0L) {
+    return(list())
+  }
+
+  if (!length(columns)) {
+    records <- vector("list", n)
+
+    for (i in seq_len(n)) {
+      records[[i]] <- list()
+    }
+
+    return(records)
+  }
+
+  do.call(Map, c(f = list(function(...) list(...)), columns))
+}
+
+#' @keywords internal
 data_frame_to_records <- function(frame) {
-  lapply(seq_len(nrow(frame)), function(i) {
-    as.list(frame[i, , drop = FALSE])
-  })
+  columns <- unclass(frame)
+  names(columns) <- names(frame)
+  columns_to_records(columns, n = nrow(frame))
 }
 
 #' @keywords internal
 xts_to_records <- function(data, fields, keep_na = FALSE) {
-  frame <- data.frame(
-    time = format_time_index(zoo::index(data)),
-    stringsAsFactors = FALSE,
-    check.names = FALSE
-  )
+  columns <- list(time = format_time_index(zoo::index(data)))
+  present_fields <- names(fields)[!vapply(fields, is.null, logical(1))]
 
-  for (field in names(fields)) {
-    column <- fields[[field]]
-    if (!is.null(column)) {
-      frame[[field]] <- as.numeric(data[, column, drop = TRUE])
+  for (field in present_fields) {
+    columns[[field]] <- as.numeric(data[, fields[[field]], drop = TRUE])
+  }
+
+  if (!keep_na && length(present_fields)) {
+    keep <- stats::complete.cases(as.data.frame(columns[present_fields], check.names = FALSE))
+
+    if (!all(keep)) {
+      columns <- lapply(columns, `[`, keep)
     }
   }
 
-  if (!keep_na) {
-    frame <- frame[stats::complete.cases(frame[names(fields)[!vapply(fields, is.null, logical(1))]]), , drop = FALSE]
-  }
-
-  data_frame_to_records(frame)
+  columns_to_records(columns)
 }
 
 #' @keywords internal

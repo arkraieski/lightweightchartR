@@ -1,7 +1,7 @@
 Package: lightweightchartR
 Type: Package
 Title: Pipe-First TradingView Lightweight Charts for Quantmod Workflows
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
     person(
       "Alex", "Kraieski",
@@ -17,7 +17,7 @@ URL: https://arkraieski.github.io/lightweightchartR/, https://github.com/arkraie
 BugReports: https://github.com/arkraieski/lightweightchartR/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Imports:
     htmlwidgets,
     quantmod,

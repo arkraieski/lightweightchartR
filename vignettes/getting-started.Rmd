@@ -1,0 +1,125 @@
+---
+title: "Getting Started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+`lightweightchartR` brings TradingView's `lightweight-charts` library to R with
+an API that feels natural for `quantmod` and `xts` users.
+
+The package is built around a simple idea:
+
+- start with market data
+- create a chart with `lwc_chart()`
+- add layers and indicators with pipes
+
+## Load packages
+
+```{r}
+library(quantmod)
+library(lightweightchartR)
+```
+
+## Download some market data
+
+We'll use Apple price data from Yahoo Finance.
+
+```{r}
+getSymbols("AAPL", from = "2024-01-01", auto.assign = TRUE)
+
+aapl <- AAPL
+head(aapl)
+```
+
+## Create a basic chart
+
+If your data has OHLC columns, `lwc_chart()` will automatically choose a
+candlestick chart.
+
+```{r}
+aapl |>
+  lwc_chart(theme = "dark", name = "AAPL")
+```
+
+## Add volume and moving averages
+
+You can layer additional series with a pipe-first workflow.
+
+```{r}
+aapl |>
+  lwc_chart(theme = "dark", name = "AAPL") |>
+  add_volume() |>
+  add_sma(20, color = "#2563eb") |>
+  add_sma(50, color = "#f59e0b")
+```
+
+By default:
+
+- volume overlays into the main price pane
+- moving averages added with `add_sma()` are drawn in the price pane
+
+## Add an indicator pane
+
+Indicators like RSI can go into their own pane.
+
+```{r}
+aapl |>
+  lwc_chart(theme = "dark", name = "AAPL") |>
+  add_volume() |>
+  add_sma(20, color = "#2563eb") |>
+  add_sma(50, color = "#f59e0b") |>
+  add_rsi()
+```
+
+## Use the quantmod-style bridge
+
+If you're coming from `chartSeries()`, the package also includes a compact
+compatibility wrapper.
+
+```{r}
+chart_series_lwc(
+  aapl,
+  theme = "dark",
+  TA = "addVo();addSMA(n = 20);addRSI()"
+)
+```
+
+## Customize chart-level behavior
+
+`lwc_chart()` also lets you control chart-wide behavior such as widget height
+and technical-analysis hover tooltips.
+
+```{r}
+aapl |>
+  lwc_chart(
+    theme = "dark",
+    name = "AAPL",
+    height = 260,
+    ta_tooltip = TRUE,
+    ta_tooltip_threshold = 10
+  ) |>
+  add_volume() |>
+  add_sma(20, color = "#2563eb") |>
+  add_sma(50, color = "#f59e0b")
+```
+
+## Summary
+
+The basic workflow is:
+
+1. Start with `xts` market data
+2. Call `lwc_chart()`
+3. Add layers and indicators with `add_*()` helpers
+
+That gives you a modern interactive chart while keeping the workflow familiar
+for `quantmod` users.
