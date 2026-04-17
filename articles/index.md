@@ -2,4 +2,5 @@
 
 ### All vignettes
 
-- [lightweightchartR](https://arkraieski.github.io/lightweightchartR/articles/lightweightchartR.md):
+- [Getting
+  Started](https://arkraieski.github.io/lightweightchartR/articles/getting-started.md):
